@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+    .logo {
+        height: 40px; /* Smaller logo for mobile */
+    }
+}
