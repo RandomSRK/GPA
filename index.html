@@ -38,8 +38,9 @@
 
             /* Header Styles */
         .header {
-            position: relative;
-            background-color: #d1dbf4;
+            position: sticky;
+			top: 0;
+            background-color: #ffffff;
             padding: 0rem ;
 			z-index: 9999;
 			font-family: 'Raleway', sans-serif; /* Change font to desired style */
@@ -338,8 +339,14 @@
         box-shadow: 0 5px 15px rgba(252,212,4,0.4);
         text-align: center;
         transition: transform 0.2s ease, background-color 0.5s ease, color 0.5s ease;
-        backdrop-filter: blur(2px); /* Adds glass effect */
+        backdrop-filter: blur(4px); /* Adds glass effect */
+		border: 2px solid #fcd404;
     }
+	
+		.product-card p {
+	text-align: left;
+	color: #0b1632;
+	}
 	
 	.product-card::after {
     content: "";
@@ -350,7 +357,7 @@
     height: 100%;
 	border-radius: 40px;
     background: #d1dbf4; /* Gradient color effect */
-    transition: width 0.3s ease-in-out;
+    transition: width 0.1s ease-in-out;
     z-index: -1;
 }
 
@@ -374,6 +381,7 @@
 	}
 	
 	.product-card:hover p {
+	text-align: left;
 	color: #0b1632;
 	}
 
@@ -453,7 +461,7 @@
     height: 300%;
     background: var(--secondary); /* Hover fill color */
     transform: rotate(45deg);
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     z-index: -1;
 }
 
@@ -566,19 +574,19 @@ Get ready to experience the future. It’s closer than you think.</p>
         <div class="product-grid">
             <div class="product-card">
                 <h3>Phthalocyanine Pigments</h3>
-                <p>High-performance organic pigments offering excellent lightfastness and chemical resistance</p>
+                <p>Vivid blues and greens that redefine brilliance! GPA’s Phthalocyanine Pigments deliver unmatched color intensity, UV resistance, and thermal stability. Ideal for coatings, plastics, and printing inks—transform industrial applications with hues that last.</p>
                 <div class="color-swatch" style="background: url('Phthalocyanine.png'); background-size: cover; background-position: center; height: 220px; width: 100%; margin: 1rem 0;"></div>
                 <a href="product1.html" class="btn">Learn More</a>
             </div>
             <div class="product-card">
                 <h3>Organic Pigments</h3>
-                <p>Vibrant colors with superior tinting strength for diverse industrial applications</p>
+                <p>Nature meets innovation. GPA’s Organic Pigments offer eco-friendly, vibrant shades with superior lightfastness. Perfect for textiles, cosmetics, and packaging—empower sustainable creativity without compromising on quality or vibrancy.</p>
                 <div class="color-swatch" style="background: url('organic.png'); background-size: cover; background-position: center; height: 220px; width: 100%; margin: 1rem 0;"></div>
                 <a href="product2.html" class="btn">Learn More</a>
             </div>
             <div class="product-card">
                 <h3>Inorganic Pigments</h3>
-                <p>Durable, weather-resistant pigments with excellent opacity and UV stability</p>
+                <p>Strength in every shade. Engineered for durability, GPA’s Inorganic Pigments excel in ceramics, construction, and automotive coatings. Withstand extreme conditions while delivering bold, fade-resistant colors for high-stakes industries.</p>
                 <div class="color-swatch" style="background: url('inorganic.png'); background-size: cover; background-position: center; height: 220px; width: 100%; margin: 1rem 0;"></div>
                 <a href="product3.html" class="btn">Learn More</a>
             </div>
