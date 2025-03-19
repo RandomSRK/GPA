@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GPA Pigments</title>
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+	<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playwrite+Magyarország&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet">
+	<!-- Link Google Material Symbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+    --font-heading: 'Montserrat', sans-serif;  /* Change this to your preferred heading font */
+    --font-paragraph: 'Open Sans', sans-serif; /* Change this to your preferred paragraph font */
+    --heading-size: 22px; /* Default heading size */
+    --paragraph-size: 14px; /* Default paragraph size */
+    --heading-color: #0b1632; /* Default heading color */
+    --paragraph-color: #0b1632; /* Default paragraph color */
+    
+    /* Button Colors */
+    --button-bg: #0b1632; /* Default button background */
+    --button-text: #FFFFFF; /* Default button text color */
+    --button-hover-bg: #162C6D; /* Button background on hover */
+    --button-hover-text: #F1F1F1; /* Button text color on hover */
+}
+
+/* Apply global styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-size: var(--heading-size);
+    color: var(--heading-color);
+}
+
+p {
+    font-family: var(--font-paragraph);
+    font-size: var(--paragraph-size);
+    color: var(--paragraph-color);
+    line-height: 1.5;
+	letter-spacing: 0.5px;
+}
+
+/* Button */
+button {
+    display: inline-block;
+    position: relative;
+    padding: 12px 10px;
+    background-color: transparent;
+    color: #0b1632;
+    font-size: 1rem;
+    
+    margin-bottom: 0rem;
+    text-decoration: none;
+    border: 2px solid #0b1632;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures effect stays within button */
+    transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -350%;
+    width: 500%;
+    height: 500%;
+    background-color: #fcd404; /* Hover fill color */
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
+button:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+button:hover {
+    background-color: transparent;
+    font-weight: bold;
+    color: #24449c;
+    border: 2px solid #24449c; 
+}
+
+/* Click (Active) Effect */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+
+	
+
+
+        body {
+            line-height: 2;
+        }
+
+         /* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 0rem;
+    z-index: 100;
+    border-bottom: 3px solid #fcd404; /* Simple line below header */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    z-index: 100;
+}
+
+.logo img {
+    margin-top: 1rem;
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #24449c;
+    text-decoration: none;
+    margin-left: 10rem;
+    padding: 10px 10px; /* Ensures background highlight covers the link */
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 5px; /* Smooth rounded edges */
+}
+
+.nav-links a:hover {
+    color: #fcd404;
+    background: #24449c;
+	padding: 10px 35px;
+}
+
+.nav-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #fcd404;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+	display: none; /* Remove underline effect */
+}
+
+.nav-links a:hover::after {
+    width: 0%;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 101; /* Ensure it overlaps */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 85%; /* Centering */
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: #1E3D8F;
+    min-width: 250px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0); /* Visible shadow */
+    border-radius: 5px;
+    z-index: 102; /* Higher than .dropdown */
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--paragraph-color);
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+    font-size: var(--paragraph-size);
+    font-family: var(--font-paragraph);
+    border-radius: 0; /* Remove individual rounding for uniformity */
+}
+
+.dropdown-content a:hover {
+    font-size: 16px;
+	padding: 10px 15px;
+    background: #24449c;
+    color: #fcd404;
+    border-radius: 0; /* Keep sharp edges */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* Section with Background Image */
+.bg-section {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    background: url('image/contact-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+	
+/* Dark Overlay for Better Readability */
+.bg-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+}
+
+/* Heading Style */
+.bg-section h2 {
+    position: relative;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+
+/* Section Container */
+.three-grid-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Individual Grid Item */
+.grid-box {
+    width: 300px; /* Adjust width */
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Styling */
+.grid-box img {
+    width: auto;
+    height: 65px; /* Adjust height */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.grid-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+.grid-box h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #0b1632;
+}
+
+/* Paragraph */
+.grid-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
+/* Section Styling */
+.form-section {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Heading */
+.form-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0b1632;
+}
+
+/* Form Layout */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Full Width Fields */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Input Fields */
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Message Box */
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Button Styling */
+.send-btn {
+    display: block;
+    position: relative;
+    padding: 12px 15px;
+    background: #ffffff;
+    color: #0b1632;
+	
+    border: 2px solid #0b1632;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease, background 0.3s ease, font-weight 0.3s;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+/* Hover Effect */
+.send-btn::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -200%;
+    width: 250%;
+    height: 1400%;
+    background-color: #fcd404; /* Hover fill color */
+    transform: rotate(45deg);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+/* Apply the effect on hover */
+.send-btn:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+.send-btn:hover {
+    font-weight: bold;
+    color: #24449c;
+    background: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #f8f8ff; 
+    color: black;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 10px;
+	gap: -30px; /* Adjust gap to decrease spacing */
+}
+
+/* Logo */
+.footer-logo img {
+    width: 200px;
+    height: auto;
+	margin-top: 70px;
+}
+
+/* Quick Links */
+.footer-links, .footer-contact {
+    text-align: left;
+    margin-bottom: 15px; /* Added spacing */
+	flex: -2; /* Makes sections take equal space */
+    min-width: 100px; /* Prevents them from collapsing on smaller screens */
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 16px;
+	
+    margin-bottom: 10px; /* Adjusted spacing */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px; /* Increased spacing */
+}
+
+.footer-links ul li a, .footer-contact a {
+    color: #0b1632;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover, .footer-contact a:hover {
+    text-decoration: underline;
+    color: #fcd404; /* Highlight on hover */
+}
+
+/* Contact Info */
+.footer-contact p {
+    margin: 3px 0; /* Added small spacing */
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px; /* Increased for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links, .footer-contact {
+        text-align: center;
+    }
+}
+
+
+
+/* Existing styles remain unchanged */
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 1rem; /* Add top margin for spacing */
+    }
+
+    .nav-links a {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 1rem; /* Add bottom margin for spacing */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack about section elements */
+        text-align: center; /* Center text */
+    }
+
+    .about-photo, .about-content {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .application-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center; /* Center footer items */
+    }
+
+    .footer-links, .footer-contact {
+        text-align: center; /* Center text in footer */
+    }
+
+    .contact-us h1 {
+        font-size: 40px; /* Adjust font size for mobile */
+    }
+
+    .contact-btn {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links a {
+        margin-bottom: 0.5rem; /* Add bottom margin for spacing */
+    }
+
+    .about-photo {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .about-content {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .application-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center; /* Center footer items */
+    }
+
+    .footer-links, .footer-contact {
+        text-align: center; /* Center text in footer */
+    }
+
+    .contact-us h1 {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .contact-btn {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="GPA Pigments Logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html#intro">Home</a>
+				 <a href="about.html">About Us</a>
+                <!-- Products Dropdown -->
+                <div class="dropdown">
+                    <a href="index.html#products">Products</a>
+                    <div class="dropdown-content">
+                        <a href="product1.html">Phthalocyanine Pigment</a>
+                        <a href="product2.html">Organic Pigment</a>
+                        <a href="product3.html">Inorganic Pigment</a>
+                    </div>
+                </div>
+               
+				<a href="blog.html">Articles</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+       
+    </header>
+	
+	<section class="bg-section">
+    <h2>Contact Us</h2>
+</section>
+
+
+<section class="three-grid-section">
+    <div class="grid-box">
+        <img src="image/address.png" alt="Image 1">
+        <h3>Address</h3>
+        <p>Office (1) :146, Shoppers Gate, Vapi- Daman Road, Chala, Vapi, Gujarat, India - 396191 <br> </br> 
+			Office (2) : P.O. Box : 631, Shinyanga, Tanzania. (East Africa)</p>
+    </div>
+    <div class="grid-box">
+        <img src="image/email.png" alt="Image 2">
+        <h3>Email ID</h3>
+        <p>hevin.gpa@gmail.com</p>
+    </div>
+    <div class="grid-box">
+        <img src="image/phone.png" alt="Image 3">
+        <h3>Call Us</h3>
+        <p>+91 9327214906</p>
+    </div>
+</section>
+
+
+<section class="form-section">
+    <h2>Get in Touch</h2>
+    <form class="form-container">
+        <input type="text" placeholder="First Name*" required>
+        <input type="text" placeholder="Last Name*" required>
+        <input type="tel" placeholder="Phone Number*" required>
+        <input type="email" placeholder="Email Id*" required>
+        <input type="text" class="full-width" placeholder="Product Interested*" required>
+        <textarea class="full-width" placeholder="Message"></textarea>
+        <button type="submit" class="send-btn full-width">Send Inquiry</button>
+    </form>
+</section>
+
+
+	
+	
+
+    
+   <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left: Logo -->
+        <div class="footer-logo">
+            <img src="image/logo.png" alt="GPA Logo">
+        </div>
+
+        <!-- Middle: Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+		
+		<div class="footer-links">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="product1.html">Phthalocyanine Pigments</a></li>
+                <li><a href="product2.html">Organic Pigments</a></li>
+                <li><a href="product3.html">Inorganic Pigments</a></li>
+             
+            </ul>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Address:</strong> <br>Office (1) :146, Shoppers Gate, Vapi- Daman Road, <br>Chala, Vapi, Gujarat, India - 396191 <br> </br>
+
+Office (2) : P.O. Box : 631, Shinyanga, <br>Tanzania. (East Africa)<br></br></p>
+            <p><strong>Email:</strong> <a href="mailto:hevin.gpa@gmail.com">hevin.gpa@gmail.com</a><br></br></p>
+            <p><strong>Phone Number:</strong> <a href="tel:+919327214906">+91 93272 14906</a></p>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>Copyright © 2025 GPA. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
