@@ -301,70 +301,69 @@ button:active {
 
 
 
-    /* Floating Inquiry Button */
-    .inquiry-button {
-        position: fixed;
-        right: -60px;
-        top: 30%;
-        transform: translateY(-50%) rotate(270deg);
-		font-family: var(--font-heading);
-        background: #24449C; /* Green color */
-        color: white;
-		font-size: 14px;
-		font-weight: bold;
-        padding: 10px 30px;
-        border-radius: 16px 16px 0 0;
-		border: 1.5px solid #fcd404;
-        cursor: pointer;
-        z-index: 1000;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        height: var(--button-height, 50px); /* Adjustable height */
-        transition: all 0.3s ease;
-		overflow: hidden; /* Ensures effect stays within button */
-    }
-
-    .inquiry-button::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: -300%;
-    width: 200%;
-    height: 700%;
-    background-color: #fcd404; /* Hover fill color */
-    transform: rotate(45deg);
-    transition: all 0.3s ease-in-out;
-    z-index: -1;
-}
-
-.inquiry-button:hover::before {
-    top: -50%;
-    left: -50%;
-}
-
-.inquiry-button:hover {
-    background-color: #24449c;
-    color: #24449c;
+    /* Floating Inquiry Button - Mobile First */
+.inquiry-button {
+    position: fixed;
+    right: -60px;
+    top: 30%;
+    transform: translateY(-50%) rotate(270deg);
+    font-family: var(--font-heading);
+    background: #24449C;
+    color: white;
+    font-size: 14px;
     font-weight: bold;
-    border: 2px solid #24449c;
+    padding: 10px 30px;
+    border-radius: 16px 16px 0 0;
+    border: 1.5px solid #fcd404;
+    cursor: pointer;
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 50px;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-    .inquiry-button i {
-        transform: rotate(90deg);
+/* Button hover effect - only for devices that support hover */
+@media (hover: hover) {
+    .inquiry-button::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -300%;
+        width: 200%;
+        height: 700%;
+        background-color: #fcd404;
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in-out;
+        z-index: -1;
     }
 
-    /* Optional: Add media query for mobile */
-    @media (max-width: 768px) {
-        .inquiry-button {
-            padding: 10px 20px;
-            font-size: 14px;
-        }
+    .inquiry-button:hover::before {
+        top: -50%;
+        left: -50%;
     }
-	
-	
-	/* Popup Container */
+
+    .inquiry-button:hover {
+        background-color: #24449c;
+        color: #24449c;
+        font-weight: bold;
+        border: 2px solid #24449c;
+    }
+}
+
+/* Active state for touch devices */
+.inquiry-button:active {
+    transform: translateY(-50%) rotate(270deg) scale(0.95);
+}
+
+.inquiry-button i {
+    transform: rotate(90deg);
+}
+
+/* Popup Container - Mobile First */
 .popup-container {
     display: none;
     position: fixed;
@@ -373,101 +372,152 @@ button:active {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 1001; /* Higher than button */
     justify-content: center;
     align-items: center;
-	
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Popup Box */
+/* Popup Box - Responsive */
 .popup-box {
     background: #ffffff;
     padding: 20px;
-    width: 800px;  /* Set the width to 800px */
+    width: 100%;
+    max-width: 800px;
     border-radius: 10px;
     text-align: center;
-	
     position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Close Button */
 .close-btn {
     position: absolute;
-    top: 5px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     font-size: 24px;
     cursor: pointer;
-	transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.close-btn::after {
-    content: "Close";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    font-size: 14px;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+/* Close tooltip - only for desktop */
+@media (hover: hover) {
+    .close-btn::after {
+        content: "Close";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .close-btn:hover::after {
+        opacity: 0.5;
+        visibility: visible;
+    }
 }
 
-.close-btn:hover::after {
-    opacity: 0.5;
-    visibility: visible;
-}
-
-/* Grid Layout for Form Fields */
+/* Form Grid - Responsive */
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 15px;
     text-align: left;
-	color: #24449c;
+    color: #24449c;
 }
 
-/* Make Single Fields Span the Full Width */
+/* Full width fields */
 .full-width {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 /* Form Inputs */
 input, select, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #0b1632;
     border-radius: 5px;
+    font-size: 16px; /* Better for mobile */
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 120px; /* More space for mobile */
 }
 
 /* Submit Button */
 .submeet-btn {
     display: block;
-    width: 50%;
+    width: 100%;
+    max-width: 200px;
     margin: 20px auto 0;
-    padding: 2px ;
+    padding: 12px;
     background: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.submeet-btn:hover {
-    background: #45a049;
+/* Active state for touch devices */
+.submeet-btn:active {
+    transform: scale(0.98);
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+    /* Button adjustments */
+    .inquiry-button {
+        right: -50px;
+        padding: 12px 35px;
+    }
+
+    /* Form grid - two columns */
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+
+    /* Popup padding */
+    .popup-box {
+        padding: 30px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1024px) {
+    .inquiry-button {
+        right: -45px;
+        font-size: 16px;
+    }
 }
 
 /* Show Popup */
 .show-popup {
     display: flex;
 }
-
 
 
 @media (max-width: 768px) {
