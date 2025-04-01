@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GPA Pigments</title>
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+	<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playwrite+Magyarország&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Engagement&display=swap" rel="stylesheet">
+	<!-- Link Google Material Symbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+    --font-heading: 'Montserrat', sans-serif;  /* Change this to your preferred heading font */
+    --font-paragraph: 'Open Sans', sans-serif; /* Change this to your preferred paragraph font */
+    --heading-size: 22px; /* Default heading size */
+    --paragraph-size: 14px; /* Default paragraph size */
+    --heading-color: #0b1632; /* Default heading color */
+    --paragraph-color: #0b1632; /* Default paragraph color */
+    
+    /* Button Colors */
+    --button-bg: #0b1632; /* Default button background */
+    --button-text: #FFFFFF; /* Default button text color */
+    --button-hover-bg: #162C6D; /* Button background on hover */
+    --button-hover-text: #F1F1F1; /* Button text color on hover */
+}
+
+/* Apply global styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-size: var(--heading-size);
+    color: var(--heading-color);
+}
+
+p {
+    font-family: var(--font-paragraph);
+    font-size: var(--paragraph-size);
+    color: var(--paragraph-color);
+    line-height: 1.5;
+	letter-spacing: 0.5px;
+}
+
+/* Button */
+button {
+    display: inline-block;
+    position: relative;
+    padding: 12px 10px;
+    background-color: transparent;
+    color: #0b1632;
+    font-size: 1rem;
+    
+    margin-bottom: 0rem;
+    text-decoration: none;
+    border: 2px solid #0b1632;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures effect stays within button */
+    transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -350%;
+    width: 500%;
+    height: 500%;
+    background-color: #fcd404; /* Hover fill color */
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
+button:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+button:hover {
+    background-color: transparent;
+    font-weight: bold;
+    color: #24449c;
+    border: 2px solid #24449c; 
+}
+
+/* Click (Active) Effect */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+
+	
+
+
+         body {
+            line-height: 2;
+			overflow-x: hidden;
+        }
+		
+
+         /* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 0rem;
+    z-index: 100;
+    border-bottom: 3px solid #fcd404; /* Simple line below header */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    z-index: 100;
+}
+
+.logo img {
+    margin-top: 1rem;
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #24449c;
+    text-decoration: none;
+    margin-left: 10rem;
+    padding: 10px 10px; /* Ensures background highlight covers the link */
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 5px; /* Smooth rounded edges */
+}
+
+.nav-links a:hover {
+    color: #fcd404;
+    background: #24449c;
+	padding: 10px 35px;
+}
+
+.nav-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #fcd404;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+	display: none; /* Remove underline effect */
+}
+
+.nav-links a:hover::after {
+    width: 0%;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 101; /* Ensure it overlaps */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 85%; /* Centering */
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: #1E3D8F;
+    min-width: 250px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0); /* Visible shadow */
+    border-radius: 5px;
+    z-index: 102; /* Higher than .dropdown */
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--paragraph-color);
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+    font-size: var(--paragraph-size);
+    font-family: var(--font-paragraph);
+    border-radius: 0; /* Remove individual rounding for uniformity */
+}
+
+.dropdown-content a:hover {
+    font-size: var(--paragraph-size);
+	padding: 10px 15px;
+    background: #24449c;
+    color: #fcd404;
+    border-radius: 0; /* Keep sharp edges */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Intro Section */
+    .intro h1 {
+        font-size: 32px;
+        margin-left: 5%;
+    }
+
+    .intro p {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    /* Products Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About Section */
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    /* Why Choose Grid */
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Logo */
+    .logo img {
+        height: 40px;
+        margin-top: 0.5rem;
+    }
+
+    /* Inquiry Button */
+    .inquiry-button {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    /* Contact Section */
+    .contact-us h1 {
+        font-size: 48px;
+    }
+}
+
+
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        margin-top: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Section with Background Image - Mobile First */
+.bg-section {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Viewport units for responsiveness */
+    min-height: 300px; /* Minimum height */
+    max-height: 600px; /* Maximum height */
+    background: url('image/contact-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; /* Add padding for mobile */
+    box-sizing: border-box;
+}
+
+/* Dark Overlay */
+.bg-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Heading Style - Responsive */
+.bg-section h2 {
+    position: relative;
+    color: white;
+    font-size: clamp(2.5rem, 8vw, 5rem); /* Fluid typography */
+    font-weight: bold;
+    z-index: 1;
+    line-height: 1.2; /* Better line spacing */
+    padding: 0 20px; /* Prevent edge touching */
+    word-break: break-word; /* Prevent text overflow */
+}
+
+/* Section Container - Responsive */
+.three-grid-section {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    align-items: center; /* Center items */
+    gap: 30px; /* Increased gap for mobile */
+    padding: 30px 20px; /* Adjusted padding */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+}
+
+/* Individual Grid Item - Responsive */
+.grid-box {
+    width: 100%; /* Full width on mobile */
+    max-width: 400px; /* Maximum width */
+    text-align: center;
+    padding: 25px 20px; /* Adjusted padding */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: all 0.3s ease;
+}
+
+/* Image Styling */
+.grid-box img {
+    width: auto;
+    height: 60px; /* Slightly reduced for mobile */
+    max-width: 100%; /* Prevent overflow */
+    object-fit: contain; /* Better for logos/icons */
+    margin: 0 auto; /* Center image */
+}
+
+/* Hover Effect - Only on hover-capable devices */
+@media (hover: hover) {
+    .grid-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Active state for touch devices */
+.grid-box:active {
+    transform: scale(0.98);
+}
+
+/* Heading */
+.grid-box h3 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem); /* Responsive font */
+    margin: 15px 0;
+    color: #0b1632;
+    line-height: 1.3;
+}
+
+/* Paragraph */
+.grid-box p {
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font */
+    color: #555;
+    line-height: 1.5; /* Better readability */
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    .bg-section {
+        height: 60vh;
+    }
+    
+    .three-grid-section {
+        flex-direction: row; /* Side-by-side on tablet */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+        padding: 40px;
+    }
+    
+    .grid-box {
+        width: calc(50% - 15px); /* 2 columns */
+        max-width: none;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    .bg-section {
+        height: 400px;
+    }
+    
+    .three-grid-section {
+        display: flex; /* Ensure flex layout */
+        flex-wrap: nowrap; /* 3 columns */
+        padding: 50px;
+        gap: 20px;
+        align-items: stretch; /* Make children stretch to equal height */
+    }
+    
+    .grid-box {
+        width: 100%; /* Equal width columns */
+        height: 320px; /* Take full available height */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    /* Optional: Ensure content fills the height */
+    .grid-box > * {
+        flex-grow: 1; /* Make content expand to fill space */
+    }
+}
+
+
+/* Form Section - Mobile First */
+.form-section {
+    width: 90%; /* Full width on mobile */
+    max-width: 700px;
+    margin: 30px auto; /* Reduced margin for mobile */
+    padding: 25px; /* Reduced padding for mobile */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Softer shadow for mobile */
+    text-align: center;
+}
+
+/* Heading - Responsive */
+.form-section h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Fluid typography */
+    margin-bottom: 15px; /* Reduced spacing */
+    color: #0b1632;
+    line-height: 1.3; /* Better line spacing */
+}
+
+/* Form Layout - Responsive */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 12px; /* Reduced gap */
+}
+
+/* Full Width Fields */
+.full-width {
+    grid-column: span 1; /* Single column on mobile */
+}
+
+/* Input Fields */
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 14px; /* Slightly larger for touch */
+    border: 1px solid #ccc; /* Thinner border */
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Message Box */
+textarea {
+    height: 150px; /* Taller for mobile typing */
+    resize: vertical; /* Allow vertical resize */
+}
+
+/* Button Styling */
+.send-btn {
+    display: block;
+    position: relative;
+    width: 100%; /* Full width on mobile */
+    padding: 14px;
+    background: #ffffff;
+    color: #0b1632;
+    border: 2px solid #0b1632;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin: 20px auto 0;
+    z-index: 1;
+}
+
+/* Active state for touch devices */
+.send-btn:active {
+    transform: scale(0.98); /* Press effect */
+}
+
+/* Hover Effect - Only on hover-capable devices */
+@media (hover: hover) {
+    .send-btn::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -200%;
+        width: 250%;
+        height: 1400%;
+        background-color: #fcd404;
+        transform: rotate(45deg);
+        transition: all 0.4s ease-in-out;
+        z-index: -1;
+    }
+    
+    .send-btn:hover::before {
+        top: -50%;
+        left: -50%;
+    }
+    
+    .send-btn:hover {
+        font-weight: bold;
+        color: #24449c;
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    .form-section {
+        padding: 30px;
+        margin: 50px auto;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .form-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 15px;
+    }
+    
+    .full-width {
+        grid-column: span 2;
+    }
+    
+    .send-btn {
+        width: auto; /* Natural width */
+        min-width: 200px; /* Minimum button width */
+        padding: 12px 25px;
+    }
+    
+    textarea {
+        height: 120px;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    .form-section {
+        padding: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #f8f8ff; 
+    color: black;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 10px;
+	gap: -30px; /* Adjust gap to decrease spacing */
+}
+
+/* Logo */
+.footer-logo img {
+    width: 200px;
+    height: auto;
+	margin-top: 70px;
+}
+
+/* Quick Links */
+.footer-links, .footer-contact {
+    text-align: left;
+    margin-bottom: 15px; /* Added spacing */
+	flex: -2; /* Makes sections take equal space */
+    min-width: 100px; /* Prevents them from collapsing on smaller screens */
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 16px;
+	
+    margin-bottom: 10px; /* Adjusted spacing */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px; /* Increased spacing */
+}
+
+.footer-links ul li a, .footer-contact a {
+    color: #0b1632;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover, .footer-contact a:hover {
+    text-decoration: underline;
+    color: #fcd404; /* Highlight on hover */
+}
+
+/* Contact Info */
+.footer-contact p {
+    margin: 3px 0; /* Added small spacing */
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px; /* Increased for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links, .footer-contact {
+        text-align: center;
+    }
+}
+
+
+
+/* Existing styles remain unchanged */
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 1rem; /* Add top margin for spacing */
+    }
+
+    .nav-links a {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 1rem; /* Add bottom margin for spacing */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack about section elements */
+        text-align: center; /* Center text */
+    }
+
+    .about-photo, .about-content {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .application-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns for smaller screens */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center; /* Center footer items */
+    }
+
+    .footer-links, .footer-contact {
+        text-align: center; /* Center text in footer */
+    }
+
+    .contact-us h1 {
+        font-size: 40px; /* Adjust font size for mobile */
+    }
+
+    .contact-btn {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links a {
+        margin-bottom: 0.5rem; /* Add bottom margin for spacing */
+    }
+
+    .about-photo {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .about-content {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .application-grid {
+        grid-template-columns: 1fr; /* 1 Column for mobile */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center; /* Center footer items */
+    }
+
+    .footer-links, .footer-contact {
+        text-align: center; /* Center text in footer */
+    }
+
+    .contact-us h1 {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+
+    .contact-btn {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="GPA Pigments Logo">
+            </div>
+			
+			<div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+    ☰
+</div>
+			
+			
+			
+			
+            <div class="nav-links">
+                <a href="index.html#intro">Home</a>
+				 <a href="about.html">About Us</a>
+                <!-- Products Dropdown -->
+                <div class="dropdown">
+                    <a href="index.html#products">Products</a>
+                    <div class="dropdown-content">
+                        <a href="product1.html">Phthalocyanine Pigment</a>
+                        <a href="product2.html">Organic Pigment</a>
+                        <a href="product3.html">Inorganic Pigment</a>
+                    </div>
+                </div>
+               
+				<a href="blog.html">Articles</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+       
+    </header>
+	
+	<section class="bg-section">
+    <h2>Contact Us</h2>
+</section>
+
+
+<section class="three-grid-section">
+    <div class="grid-box">
+        <img src="image/address.png" alt="Image 1">
+        <h3>Address</h3>
+        <p>Office (1) :146, Shoppers Gate, Vapi- Daman Road, Chala, Vapi, Gujarat, India - 396191 <br> </br> 
+			Office (2) : P.O. Box : 631, Shinyanga, Tanzania. (East Africa)</p>
+    </div>
+    <div class="grid-box">
+        <img src="image/email.png" alt="Image 2">
+        <h3>Email ID</h3>
+        <p>hevin.gpa@gmail.com</p>
+    </div>
+    <div class="grid-box">
+        <img src="image/phone.png" alt="Image 3">
+        <h3>Call Us</h3>
+        <p>+91 9327214906</p>
+    </div>
+</section>
+
+
+<section class="form-section">
+    <h2>Get in Touch</h2>
+    <form class="form-container">
+        <input type="text" placeholder="First Name*" required>
+        <input type="text" placeholder="Last Name*" required>
+        <input type="tel" placeholder="Phone Number*" required>
+        <input type="email" placeholder="Email Id*" required>
+        <input type="text" class="full-width" placeholder="Product Interested*" required>
+        <textarea class="full-width" placeholder="Message"></textarea>
+        <button type="submit" class="send-btn full-width">Send Inquiry</button>
+    </form>
+</section>
+
+
+	
+	
+
+    
+   <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left: Logo -->
+        <div class="footer-logo">
+            <img src="image/logo.png" alt="GPA Logo">
+        </div>
+
+        <!-- Middle: Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+		
+		<div class="footer-links">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="product1.html">Phthalocyanine Pigments</a></li>
+                <li><a href="product2.html">Organic Pigments</a></li>
+                <li><a href="product3.html">Inorganic Pigments</a></li>
+             
+            </ul>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Address:</strong> <br>Office (1) :146, Shoppers Gate, Vapi- Daman Road, <br>Chala, Vapi, Gujarat, India - 396191 <br> </br>
+
+Office (2) : P.O. Box : 631, Shinyanga, <br>Tanzania. (East Africa)<br></br></p>
+            <p><strong>Email:</strong> <a href="mailto:hevin.gpa@gmail.com">hevin.gpa@gmail.com</a><br></br></p>
+            <p><strong>Phone Number:</strong> <a href="tel:+919327214906">+91 93272 14906</a></p>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>Copyright © 2025 GPA. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
+
+
+
+
+</body>
+</html>
