@@ -113,7 +113,7 @@ button:active {
 }
 
 
- /* Loading Page Styles */
+/* Loading Page Styles - Mobile First */
 #loading-screen {
     position: fixed;
     width: 100%;
@@ -125,51 +125,109 @@ button:active {
     flex-direction: column;
     text-align: center;
     color: white;
-    font-size: 2rem;
+    font-size: 1rem; /* Base font size */
     z-index: 1000;
-    font-family: "Poppins", sans-serif; /* Change font style */
+    font-family: "Poppins", sans-serif;
+    padding: 20px; /* Add padding for mobile */
+    box-sizing: border-box;
 }
 
 /* Styling for Heading */
 #loading-screen h1 {
-    font-size: 20px;
+    font-size: clamp(18px, 5vw, 24px); /* Responsive font size */
     font-weight: bold;
-    color: #ffffff; /* Change heading color */
-    font-family: var(--font-heading); /* Change heading font */
+    color: #ffffff;
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
 }
 
 /* Styling for Paragraph */
 #loading-screen p {
-	width: 50%;
-    font-size: 14px;
-    color: #f2f2f2; /* Change paragraph color */
-    font-family: var(--font-paragraph); /* Change paragraph font */
+    width: 90%; /* Full width on mobile */
+    max-width: 900px; /* Limits width on larger screens */
+    font-size: clamp(12px, 3.5vw, 16px); /* Responsive font size */
+    color: #f2f2f2;
+    font-family: var(--font-paragraph);
+    line-height: 1.5; /* Better readability */
+    margin: 0 auto 30px; /* Centered with spacing */
 }
 
-/* Progress Bar Styles */
+/* Progress Bar Container */
 .progress-container {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     background: #24449c;
-    height: 20px;
-    border-radius: 0px;
+    height: 12px; /* Thinner on mobile */
+    border-radius: 0;
 }
 
+/* Progress Bar */
 .progress-bar {
     height: 100%;
     width: 0%;
     background: #fcd404;
-    border-radius: 0px;
+    border-radius: 0;
     transition: width 0.5s;
 }
 
+/* Progress Text - Mobile Optimized */
 .progress-text {
     position: absolute;
-    left: 50px;
-    bottom: -50px;
-    font-size: 150px;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%); /* Center horizontally */
+    font-size: clamp(40px, 20vw, 150px); /* Responsive size */
     font-weight: bold;
+    color: rgba(255, 255, 255, 0.8); /* More subtle */
+    white-space: nowrap;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    #loading-screen {
+        font-size: 1.5rem;
+    }
+    
+    #loading-screen h1 {
+        font-size: 28px;
+    }
+    
+    #loading-screen p {
+        width: 70%;
+        font-size: 16px;
+    }
+    
+    .progress-container {
+        height: 16px;
+    }
+    
+    .progress-text {
+        bottom: -60px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    #loading-screen h1 {
+        font-size: 28px;
+    }
+    
+    #loading-screen p {
+        width: 80%;
+        font-size: 14px;
+    }
+    
+    .progress-container {
+        height: 20px;
+    }
+    
+    .progress-text {
+        left: 50px;
+        transform: none;
+        bottom: -50px;
+        font-size: 150px;
+    }
 }
 
 
